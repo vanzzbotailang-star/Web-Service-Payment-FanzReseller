@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanz Reseller Official</title>
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --accent: #9d50bb;
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Teks Berjalan */
+        .marquee-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: moveLeftRight 10s linear infinite alternate;
+            /* Kelajuan 0.10 diatur melalui durasi animasi yang stabil */
+            font-size: 14px;
+            color: var(--primary);
+        }
+
+        @keyframes moveLeftRight {
+            from { transform: translateX(0%); }
+            to { transform: translateX(50%); }
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .btn-main {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .content-box {
+            display: none;
+            width: 100%;
+            max-width: 350px;
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            margin-top: 10px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        h3 { color: var(--primary); border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 16px; }
+        
+        .item { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+        .price { color: #00ff87; font-weight: bold; }
+
+        .payment-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 13px;
+            text-align: center;
+            color: #888;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Teks Berjalan -->
+    <div class="marquee-container">
+        <div class="marquee-text">
+            fanz reseller trusted pasti aman dan terpercaya #FastRespon , not famous but trusted hehehe
+        </div>
+    </div>
+
+    <!-- Profile -->
+    <img src="https://files.catbox.moe/2cme05.jpg" alt="Profile" class="profile-img">
+    <h2 style="margin: 0;">Fanz Reseller</h2>
+    <p style="font-size: 12px; color: #aaa;">Digital Services & Topup</p>
+
+    <!-- Menu Buka Menu -->
+    <button class="btn-main" onclick="toggleDiv('services')">Buka Menu</button>
+    
+    <div id="services" class="content-box">
+        <h3>TOPUP DIAMOND FREE FIRE</h3>
+        <div class="item"><span>25 Dm</span><span class="price">RM 1.05</span></div>
+        <div class="item"><span>50 Dm</span><span class="price">RM 2.05</span></div>
+        <div class="item"><span>100 Dm</span><span class="price">RM 3.90</span></div>
+        <div class="item"><span>200 Dm</span><span class="price">RM 7.35</span></div>
+        <div class="item"><span>520 Dm</span><span class="price">RM 12.20</span></div>
+        <div class="item"><span>830 Dm</span><span class="price">RM 30.85</span></div>
+
+        <h3>LIST FEE MIDMAN</h3>
+        <div class="item"><span>1-300</span><span class="price">RM 1.00</span></div>
+        <div class="item"><span>300-800+</span><span class="price">RM 2+</span></div>
+
+        <h3>DESIGN LOGO</h3>
+        <div class="item"><span>LOGO NAMA</span><span class="price">RM 0.50</span></div>
+        <div class="item"><span>LOGO QR</span><span class="price">RM 1.00</span></div>
+        <div class="item"><span>LOGO TOPUP/SERVICE</span><span class="price">RM 2.00</span></div>
+
+        <h3>CREATE WEBSITE</h3>
+        <div class="item"><span>WEB TOPUP DM</span><span class="price">RM 5.00</span></div>
+        <div class="item"><span>WEB PAYMENT/SERVICE</span><span class="price">RM 2.50</span></div>
+    </div>
+
+    <!-- Menu Payment -->
+    <button class="btn-main" onclick="toggleDiv('payment')">Payment Fanz Reseller</button>
+    
+    <div id="payment" class="content-box">
+        <p style="text-align:center; font-size: 14px;">Sila buat pembayaran ke akaun di bawah:</p>
+        <img src="https://files.catbox.moe/74adfq.jpg" alt="Payment QR" class="payment-img">
+    </div>
+
+    <!-- Contact Owner -->
+    <button class="btn-main" style="background: #25D366;" onclick="window.location.href='https://wa.me'">
+        CONTACT OWNER
+    </button>
+
+    <div class="footer-text">
+        ADA PERTANYAAN LAIN? BOLEH PM CONTACT OWNER✨🕊
+    </div>
+
+    <script>
+        function toggleDiv(id) {
+            var target = document.getElementById(id);
+            if (target.style.display === "block") {
+                target.style.display = "none";
+            } else {
+                target.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
